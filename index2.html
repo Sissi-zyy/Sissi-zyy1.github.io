@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>兴趣爱好</title>
+  <link rel="stylesheet" href="./css/index2.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- 导航 nav-->
+    <div class="nav">
+      <div class="top">我的兴趣爱好</div>
+      <div class="bottom">
+        <ul>
+          <li><a href="./index.html">网站首页</a></li>
+          <li class="active"><a href="./index2.html">兴趣爱好</a></li>
+          <li><a href="./index3.html">个人相册</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- 兴趣页面主体 -->
+    <div class="hobby-page">
+      <!-- 左侧兴趣导航 -->
+      <aside class="hobby-nav">
+        <h2>兴趣分类</h2>
+        <ul>
+          <li class="active" data-hobby="music">听音乐</li>
+          <li data-hobby="books"> 收集书籍</li>
+          <li data-hobby="coding">编程</li>
+        </ul>
+      </aside>
+
+      <!-- 右侧兴趣详情 -->
+      <main class="hobby-content">
+        <!-- 听音乐详情 -->
+        <div class="hobby-detail active" id="music">
+          <div class="hobby-header">
+            <h3>🎵 听音乐</h3>
+            <img
+              src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+              alt="听音乐">
+          </div>
+          <p>
+            耳机里的旋律是生活的专属BGM：通勤路上的流行曲能消解疲惫，独处时的轻音乐可沉淀情绪，偶尔也会沉迷乐队现场的热烈节奏。不同风格的音符，是我与世界温柔共振的方式——轻快的鼓点是快乐时的欢呼，舒缓的和弦是低落时的拥抱，每一段旋律都藏着独属于我的情绪记忆。
+          </p>
+        </div>
+
+        <!-- 收集书籍详情 -->
+        <div class="hobby-detail" id="books">
+          <div class="hobby-header">
+            <h3>收集书籍</h3>
+            <img
+              src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+              alt="收集书籍">
+          </div>
+          <p>
+            书架上的每本书都是“时间胶囊”：从文学小说里窥见不同人生的轨迹，在散文随笔中捕捉生活的细碎诗意，偶尔也会收集中二感满满的漫画绘本。指尖划过书脊时，像在和不同灵魂轻轻碰杯——翻开一本旧书，既能重温当时的阅读心境，也能在新的人生阶段读出不一样的感悟，藏书于我，是精神世界的“收纳盒”。
+          </p>
+        </div>
+
+        <!-- 编程详情 -->
+        <div class="hobby-detail" id="coding">
+          <div class="hobby-header">
+            <h3>编程</h3>
+            <img src="https://img2.baidu.com/it/u=574138320,136226049&fm=253&fmt=auto&app=138&f=JPEG?w=731&h=500"
+              alt="编程">
+          </div>
+          <p>
+            敲代码是“逻辑的浪漫”：从用HTML/CSS搭出喜欢的二次元风格页面，到用Python写小工具解决日常的琐碎问题，每一行代码的运行成功，都是思维落地的小确幸。我喜欢在调试中拆解问题，在实现功能时收获成就感，慢慢解锁更多技术的乐趣——编程于我，是用逻辑搭建世界的方式，也是不断探索未知的过程。
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // 兴趣导航切换交互
+      const hobbyNavItems = document.querySelectorAll('.hobby-nav li');
+      const hobbyDetails = document.querySelectorAll('.hobby-detail');
+
+      hobbyNavItems.forEach(item => {
+        item.addEventListener('click', () => {
+          // 切换导航选中状态
+          hobbyNavItems.forEach(i => i.classList.remove('active'));
+          item.classList.add('active');
+
+          // 切换详情内容
+          const hobbyId = item.dataset.hobby;
+          hobbyDetails.forEach(detail => {
+            detail.classList.remove('active');
+            if (detail.id === hobbyId) {
+              detail.classList.add('active');
+            }
+          });
+        });
+      });
+    </script>
+</body>
+
+</html>

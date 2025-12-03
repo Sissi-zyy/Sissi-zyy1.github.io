@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人相册</title>
+  <link rel="stylesheet" href="./css/index3.css">
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- 导航 nav-->
+    <div class="nav">
+      <div class="top">欢迎来到我的相册
+
+      </div>
+      <div class="bottom">
+        <ul>
+          <li><a href="./index.html">网站首页</a></li>
+          <li><a href="./index2.html">兴趣爱好</a></li>
+          <li class="active"><a href="./index3.html">个人相册</a></li>
+        </ul>
+      </div>
+      <!-- 相册展示区 -->
+
+      <!-- 相册容器 -->
+      <div class="album-container">
+        <!-- 相册卡片1 -->
+        <div class="album-card" data-img="./images/pic1.jpg">
+          <img src="./images/pic1.jpg" alt="水乡暮色">
+          <p>水乡暮色</p>
+        </div>
+        <!-- 相册卡片2 -->
+        <div class="album-card" data-img="./images/pic2.jpg">
+          <img src="./images/pic2.jpg" alt="水面荷花">
+          <p>水面荷花</p>
+        </div>
+        <!-- 相册卡片3 -->
+        <div class="album-card" data-img="./images/pic3.jpg">
+          <img src="./images/pic3.jpg" alt="抹茶与草莓">
+          <p>抹茶与草莓</p>
+        </div>
+        <!-- 相册卡片4 -->
+        <div class="album-card" data-img="./images/pic4.jpg">
+          <img src="./images/pic4.jpg" alt="郁金香的浪漫">
+          <p>郁金香的浪漫</p>
+        </div>
+        <!-- 相册卡片5 -->
+        <div class="album-card" data-img="./images/pic5.jpg">
+          <img src="./images/pic5.jpg" alt="美食记录">
+          <p>美食记录</p>
+        </div>
+        <!-- 相册卡片6 -->
+        <div class="album-card" data-img="./images/pic6.jpg">
+          <img src="./images/pic6.jpg" alt="树林光影">
+          <p>树林光影</p>
+        </div>
+        <!-- 相册卡片7 -->
+        <div class="album-card" data-img="./images/pic7.jpg">
+          <img src="./images/pic7.jpg" alt="枯树远景">
+          <p>枯树远景</p>
+        </div>
+        <!-- 相册卡片8 -->
+        <div class="album-card" data-img="./images/pic8.jpg">
+          <img src="./images/pic8.jpg" alt="城市日落">
+          <p>城市日落</p>
+        </div>
+      </div>
+
+      <!-- 图片放大遮罩层 -->
+      <div class="album-modal">
+        <img src="" class="modal-img" alt="放大图片">
+      </div>
+
+      <script>
+        // 相册卡片点击放大
+        const albumCards = document.querySelectorAll('.album-card');
+        const albumModal = document.querySelector('.album-modal');
+        const modalImg = document.querySelector('.modal-img');
+
+        albumCards.forEach(card => {
+          card.addEventListener('click', () => {
+            // 设置放大图片的地址
+            modalImg.src = card.dataset.img;
+            // 显示遮罩层
+            albumModal.style.display = 'flex';
+          });
+        });
+
+        // 点击遮罩层关闭
+        albumModal.addEventListener('click', () => {
+          albumModal.style.display = 'none';
+        });
+      </script>
+</body>
+
+</html>
