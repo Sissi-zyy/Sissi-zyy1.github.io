@@ -68,7 +68,6 @@
                   <span class="iconfont icon-jita-danse"></span>弹吉他
                 </div>
                 <div class="body">
-
                   具备系统的吉他演奏知识，精通基础乐理知识与和弦转换，熟练弹奏流行曲目，能精准演绎旋律层次与情感表达。
                 </div>
               </li>
@@ -92,6 +91,7 @@
             </ul>
           </div>
         </div>
+        <!-- 作品展示 -->
         <div class="works-section">
           <h2>我的兴趣作品</h2>
           <div class="works-tabs">
@@ -103,14 +103,16 @@
               <div class="work-card">
                 <h3>《晴天》吉他弹唱</h3>
                 <p>节奏型：分解和弦+扫弦结合</p>
-                <button class="play-btn">播放演示 ▶</button>
+                <audio class="audio-player" src="./audio/晴天.mp3"></audio>
+                <button class="play-btn" onclick="controlAudio(this)">播放演示 ▶</button>
               </div>
             </div>
             <div class="tab-panel" id="sing">
               <div class="work-card">
                 <h3>《小幸运》翻唱</h3>
                 <p>风格：抒情流行</p>
-                <button class="play-btn">播放演示 ▶</button>
+                <audio class="audio-player" src="./audio/小幸运.mp3"></audio>
+                <button class="play-btn" onclick="controlAudio(this)">播放演示 ▶</button>
               </div>
             </div>
           </div>
@@ -129,13 +131,18 @@
             document.getElementById(btn.dataset.tab).classList.add('active');
           });
         });
-        document.querySelectorAll('.play-btn').forEach(btn => {
-          btn.addEventListener('click', () => {
-            alert(`正在播放「${btn.parentElement.querySelector('h3').textContent}」~`);
-          });
-        });
+        function controlAudio(btn) {
+          const audio = btn.previousElementSibling;
+          if (audio.paused) {
+            audio.play();
+            btn.textContent = '停止演示';
+          } else {
+            audio.pause();
+            audio.currentTime = 0;
+            btn.textContent = '播放演示';
+          }
+        }
       </script>
 </body>
-
 
 </html>
