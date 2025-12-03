@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首页</title>
+  <link rel="stylesheet" href="./icon/iconfont.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <div>
+    <div class="i"></div>
+    <div class="wrapper">
+      <!-- 导航 nav-->
+      <div class="nav">
+        <div class="top">欢迎来到我的个人网站</div>
+        <div class="bottom">
+          <ul>
+            <li class="active"><a href="./index.html">网站首页</a></li>
+            <li><a href="./index2.html">兴趣爱好</a></li>
+            <li><a href="./index3.html">个人相册</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- 关于我 info-->
+      <div class="info">
+        <div class="top">
+          <div class="me">关于我</div>
+
+        </div>
+        <div class="middle">
+          <img src="../myself/images/头像.webp" title="莉莉莎">
+          <div class="intro">
+            <ul id="first">
+              <li>姓名： 赵妍妍</li>
+              <li>年龄： 19岁</li>
+              <li>家乡： 中国·四川·巴中</li>
+              <li>学校： 四川工商学院</li>
+            </ul>
+            <ul id="second">
+              <li>专业： 计算机科学与技术</li>
+              <li></li>
+              <li>邮箱： 3356329769@qq.com</li>
+              <li>电话： 13408064713</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="skill">
+            我的技能
+          </div>
+          <div class="skill2">
+            <ul>
+              <li>
+                <div class="title">
+                  <span class="iconfont icon-Fishing"></span>
+                  垂钓
+                </div>
+                <div class="body">
+                  秉持专业学习态度，一熟练掌握太吊的基础技法，熟练常用线组搭配与浮漂调试，具备简单的水域垂钓能力，注重经验总结，循序渐进提升作钓专业度。
+                </div>
+              </li>
+              <li>
+
+                <div class="title">
+                  <span class="iconfont icon-jita-danse"></span>弹吉他
+                </div>
+                <div class="body">
+
+                  具备系统的吉他演奏知识，精通基础乐理知识与和弦转换，熟练弹奏流行曲目，能精准演绎旋律层次与情感表达。
+                </div>
+              </li>
+              <li>
+                <div class="title">
+                  <span class="iconfont icon-changge"></span>唱歌
+                </div>
+                <div class="body">
+                  深耕声乐演唱，熟练气息支撑与音色塑造技巧，能精准驾驭多种风格歌曲，兼具细腻抒情与激昂表达力，擅长通过旋律传递深层情绪。
+                </div>
+              </li>
+              <li>
+                <span class="iconfont icon-xxx"></span>
+                <div class="title">
+                  <span class="iconfont icon-biancheng-01"></span>编程
+                </div>
+                <div class="body">
+                  热爱编程学习，主动学习编程基础内容，掌握基础代码与简单程序逻辑，虽未达到熟练水准，但保持探索热情，稳步提升编程能力.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="works-section">
+          <h2>我的兴趣作品</h2>
+          <div class="works-tabs">
+            <button class="tab-btn active" data-tab="guitar">🎸 吉他作品</button>
+            <button class="tab-btn" data-tab="sing">🎤 唱歌作品</button>
+          </div>
+          <div class="works-content">
+            <div class="tab-panel active" id="guitar">
+              <div class="work-card">
+                <h3>《晴天》吉他弹唱</h3>
+                <p>节奏型：分解和弦+扫弦结合</p>
+                <button class="play-btn">播放演示 ▶</button>
+              </div>
+            </div>
+            <div class="tab-panel" id="sing">
+              <div class="work-card">
+                <h3>《小幸运》翻唱</h3>
+                <p>风格：抒情流行</p>
+                <button class="play-btn">播放演示 ▶</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <script>
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabPanels = document.querySelectorAll('.tab-panel');
+        tabBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabPanels.forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById(btn.dataset.tab).classList.add('active');
+          });
+        });
+        document.querySelectorAll('.play-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            alert(`正在播放「${btn.parentElement.querySelector('h3').textContent}」~`);
+          });
+        });
+      </script>
+</body>
+
+</html>

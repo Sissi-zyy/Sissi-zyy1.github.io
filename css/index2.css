@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 1500px;
+
+}
+
+body {
+  height: 1000px;
+  background: linear-gradient(180deg, #fff8fa 0%, #ffeef3 100%);
+}
+
+.nav .top {
+  height: 60px;
+  color: white;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 60px;
+  text-align: center;
+  background-color: #fc84aa;
+}
+
+.nav .bottom {
+  height: 30;
+
+  background-color: #f7709b;
+}
+
+.nav ul {
+  display: flex;
+}
+
+.nav li {
+  margin: 2px 220px;
+}
+
+.nav li a {
+  display: block;
+  line-height: 20px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.nav .active,
+.nav ul a:hover {
+  border-bottom: 2px solid #ffffff;
+}
+
+body {
+  background-color: #fff8fa;
+}
+
+.page-title {
+  background: linear-gradient(135deg, #ff85a2 0%, #ffb6c1 100%);
+  /* 粉色渐变 */
+  color: #fff;
+  font-weight: 700;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  text-shadow: 2px 2px 4px rgba(255, 107, 155, 0.3);
+}
+
+/* 兴趣页面主布局 */
+.hobby-page {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 25px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* 左侧兴趣导航 */
+.hobby-nav {
+  background-color: #fff0f5;
+  border-radius: 15px;
+  padding: 25px;
+  border: 1px solid #ffc2d1;
+  box-shadow: 0 5px 15px rgba(255, 133, 162, 0.1);
+}
+
+.hobby-nav h2 {
+  color: #ff6b9b;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.hobby-nav ul {
+  list-style: none;
+}
+
+.hobby-nav li {
+  padding: 12px 18px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  color: #d6336c;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hobby-nav li.active {
+  background-color: #ff6b9b;
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(255, 107, 155, 0.2);
+}
+
+.hobby-nav li:hover:not(.active) {
+  background-color: #ffeef3;
+  transform: translateX(5px);
+}
+
+/* 右侧兴趣详情 */
+.hobby-content {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(255, 133, 162, 0.1);
+}
+
+.hobby-detail {
+  display: none;
+  /* 默认隐藏 */
+}
+
+.hobby-detail.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hobby-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.hobby-header h3 {
+  color: #ff6b9b;
+  font-size: 22px;
+}
+
+.hobby-header img {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  border: 2px solid #ffc2d1;
+  box-shadow: 0 3px 8px rgba(255, 133, 162, 0.2);
+}
+
+.hobby-detail p {
+  color: #555;
+  line-height: 1.7;
+  font-size: 15px;
+  text-indent: 2em;
+}
+
+/* 响应式适配（手机端） */
+@media (max-width: 768px) {
+  .hobby-page {
+    grid-template-columns: 1fr;
+  }
+
+  .hobby-nav ul {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .hobby-nav li {
+    margin-bottom: 0;
+  }
+}
